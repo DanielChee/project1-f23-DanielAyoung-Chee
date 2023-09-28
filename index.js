@@ -102,7 +102,7 @@ document.addEventListener('click', (event) => {
 
 document.getElementById('infoButton').addEventListener('click', function() {
     displayInfo();
-    document.getElementById("infoButton").style.color("#7CFF79");
+    
 });
 
 document.getElementById('movesButton').addEventListener('click', function() {
@@ -113,12 +113,16 @@ function displayInfo() {
     document.getElementById('heading-stats').textContent = 'Info';
     document.getElementById('stats').style.display = 'block';
     document.getElementById('movesList').style.display = 'none';
+    document.getElementById("infoButton").style.backgroundColor = "#7CFF79";
+    document.getElementById("movesButton").style.backgroundColor = "#E8E8E8";
 }
 
 function displayMoves() {
     document.getElementById('heading-stats').textContent = 'Moves';
     document.getElementById('movesList').style.display = 'block';
     document.getElementById('stats').style.display = 'none';
+    document.getElementById("infoButton").style.backgroundColor = "#E8E8E8";
+    document.getElementById("movesButton").style.backgroundColor = "#7CFF79";
 }
 
 
