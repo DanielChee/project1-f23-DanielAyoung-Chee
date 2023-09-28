@@ -53,7 +53,7 @@ async function fetchData() {
     typesDisplay.innerHTML = '';
     typesArray.forEach((typeData) => {
         const type = typeData.type.name;
-        const typeColor = types[type] || 'gray'; // Use types object
+        const typeColor = types[type] || 'gray';
         const typeElement = document.createElement('span');
         typeElement.textContent = type;
         typeElement.style.color = typeColor;
@@ -61,15 +61,15 @@ async function fetchData() {
     });
 
     
-    document.getElementById("name-pokemon").innerHTML = `${name}`;
-    document.getElementById("height").innerHTML = `${height}`;
-    document.getElementById("weight").innerHTML = `${weight}`;
-    document.getElementById("hp").innerHTML = `${hp}`;
-    document.getElementById("attack").innerHTML = `${attack}`;
-    document.getElementById("defense").innerHTML = `${defense}`;
-    document.getElementById("special-attack").innerHTML = `${specialAttack}`;
-    document.getElementById("special-defense").innerHTML = `${specialDefense}`;
-    document.getElementById("speed").innerHTML = `${speed}`;
+    document.getElementById("name-pokemon").innerHTML = `Name: ${name}`;
+    document.getElementById("height").innerHTML = `Height: ${height}`;
+    document.getElementById("weight").innerHTML = `Weight: ${weight}`;
+    document.getElementById("hp").innerHTML = `Hitpoints: ${hp}`;
+    document.getElementById("attack").innerHTML = `Attack: ${attack}`;
+    document.getElementById("defense").innerHTML = `Defense: ${defense}`;
+    document.getElementById("special-attack").innerHTML = `Special Attack: ${specialAttack}`;
+    document.getElementById("special-defense").innerHTML = `Special Defense: ${specialDefense}`;
+    document.getElementById("speed").innerHTML = `Speed: ${speed}`;
     document.getElementById('img-pokemon').src = data.sprites.front_default;
     displayInfo();
 }
@@ -93,12 +93,10 @@ document.addEventListener('click', (event) => {
 });
 
 document.getElementById('infoButton').addEventListener('click', function() {
-    // Set the mode to "Info"
     displayInfo();
 });
 
 document.getElementById('movesButton').addEventListener('click', function() {
-    // Set the mode to "Moves"
     displayMoves();
 });
 
