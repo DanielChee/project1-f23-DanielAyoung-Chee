@@ -71,8 +71,18 @@ body {
     justify-content: center;
     font-size: 24px;
     font-weight: bolder;
+    border: 1px white solid;
 }
-
+#decrement:hover {
+    border: 1px black dotted;
+    cursor: default;
+    user-select: none;
+}
+#increment:hover {
+    border: 1px black dotted;
+    cursor: default;
+    user-select: none;
+}
 #types {
     font-size: 12px;
 }
@@ -108,6 +118,18 @@ ul {
     align-items: center;
     justify-content: center;
     padding-left: 0;
+    border: 1px white solid;
+}
+
+#infoButton:hover {
+    border: 1px black dotted;
+    cursor: default;
+    user-select: none;
+}
+#movesButton:hover {
+    border: 1px black dotted;
+    cursor: default;
+    user-select: none;
 }
 
 #statss {
