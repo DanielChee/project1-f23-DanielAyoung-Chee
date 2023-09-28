@@ -25,7 +25,7 @@ async function fetchData() {
     const response = await fetch(BASE_URL);
     const data = await response.json();
 
-    const name = data.name;
+    const name = data.name.charAt(0).toUpperCase() + data.name.slice(1);;
     const image = data.image;
     const height = data.height;
     const weight = data.weight;
@@ -44,7 +44,7 @@ async function fetchData() {
     movesList.innerHTML = '';
     for (const moveName of moveNames.slice(0, 10)) {
         const listItem = document.createElement('li');
-        listItem.textContent = moveName;
+        listItem.textContent = moveName.charAt(0).toUpperCase() + moveName.slice(1);
         movesList.appendChild(listItem);
     }
     
@@ -61,7 +61,7 @@ async function fetchData() {
     });
 
     
-    document.getElementById("name-pokemon").innerHTML = `Name: ${name}`;
+    document.getElementById("name-pokemon").innerHTML = `${name}`;
     document.getElementById("height").innerHTML = `Height: ${height}`;
     document.getElementById("weight").innerHTML = `Weight: ${weight}`;
     document.getElementById("hp").innerHTML = `Hitpoints: ${hp}`;
