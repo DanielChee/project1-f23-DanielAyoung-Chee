@@ -1,5 +1,5 @@
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Inter", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,9 +19,9 @@ body {
 
 .title {
     position: absolute;
-    top: 23px;
+    top: 30px;
     align-self: center;
-    
+    font-weight: 75000;
 }
 
 #content {
@@ -41,7 +41,7 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid #000000;
-    background-color: rgb(229, 229, 229);
+    background-color: #E8E8E8;
     width: 231px;
     height: 33px;
     border-radius: 5px;
@@ -58,26 +58,33 @@ body {
 #arrows {
     display: flex;
     flex-direction: row;
-    
-
 }
 
 #decrement, #increment {
     width: 86px;
     height: 34px;
-    background-color: rgb(229, 229, 229);
+    background-color: #E8E8E8;
     border-radius: 5px;
     margin: 11px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Onset";
     font-size: 24px;
     font-weight: bolder;
 }
 
 #types {
+    font-size: 12px;
+}
+
+#type {
     font-weight: bolder;
+}
+
+#info-moves {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
 }
 
 ul {
@@ -88,22 +95,36 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 33px;
 }
 
 #infoButton, #movesButton {
-    border: 1px black solid;
     width: 86px;
     height: 34px;
-    background-color: rgb(229, 229, 229);
+    background-color: #E8E8E8;
     border-radius: 5px;
     margin: 11px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 0;
 }
 
 #statss {
-    background: rgb(229, 229, 229);
-    padding: 5px;
+    background: #E8E8E8;
+    padding: 0px;
     height: 220px;
+    width: 243px;
+    height: 299px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-weight: 200px;
+    font-size: 18px;
+}
+
+#heading-stats {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
 }

@@ -59,8 +59,11 @@ async function fetchData() {
         typeElement.style.background = typeColor;
         typeElement.style.marginRight = "5px";
         typeElement.style.borderRadius = "4px";
-        typeElement.style.padding = "5px";
-        typeElement.style.fontSize = "11px";
+        typeElement.style.padding = "3px";
+        typeElement.style.paddingLeft = "7px";
+        typeElement.style.paddingRight = "7px";
+        typeElement.style.fontSize = "12px";
+        typeElement.style.fontWeight = "0";
         typesDisplay.appendChild(typeElement);
         
     });
@@ -99,6 +102,7 @@ document.addEventListener('click', (event) => {
 
 document.getElementById('infoButton').addEventListener('click', function() {
     displayInfo();
+    document.getElementById("infoButton").style.color("#7CFF79");
 });
 
 document.getElementById('movesButton').addEventListener('click', function() {
@@ -106,7 +110,7 @@ document.getElementById('movesButton').addEventListener('click', function() {
 });
 
 function displayInfo() {
-    document.getElementById('heading-stats').textContent = 'Information';
+    document.getElementById('heading-stats').textContent = 'Info';
     document.getElementById('stats').style.display = 'block';
     document.getElementById('movesList').style.display = 'none';
 }
