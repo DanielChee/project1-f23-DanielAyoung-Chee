@@ -45,6 +45,7 @@ body {
     width: 231px;
     height: 33px;
     border-radius: 5px;
+    margin-bottom: 0px;
 }
 
 #img-pokemon {
@@ -52,4 +53,25 @@ body {
     border: 2px black solid;
     margin-top: 82.5px;
     margin-right: 123px;
+}
+
+#arrows {
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+#decrement, #increment {
+    width: 86px;
+    height: 34px;
+    background-color: rgb(229, 229, 229);
+    border-radius: 5px;
+    margin: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Onset";
+    font-size: 24px;
+    font-weight: bolder;
 }
