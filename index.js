@@ -27,8 +27,8 @@ async function fetchData() {
 
     const name = data.name.charAt(0).toUpperCase() + data.name.slice(1);;
     const image = data.image;
-    const height = String(data.height / 10) + " m";
-    const weight = data.weight;
+    const height = String(data.height / 10) + "m";
+    const weight = String(data.weight / 10) + "kg";
     const hp = data.stats[0].base_stat;
     const attack = data.stats[1].base_stat;
     const defense = data.stats[2].base_stat;
