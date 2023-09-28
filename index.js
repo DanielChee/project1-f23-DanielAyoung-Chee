@@ -1,9 +1,29 @@
 let index = 1;
 
+const types = {
+    normal: "#A8A77A",
+    fire: "#EE8130",
+    water: "#6390F0",
+    electric: "#F7D02C",
+    grass: "#7AC74C",
+    ice: "#96D9D6",
+    fighting: "#C22E28",
+    poison: "#A33EA1",
+    ground: "#E2BF65",
+    flying: "#A98FF3",
+    psychic: "#F95587",
+    bug: "#A6B91A",
+    rock: "#B6A136",
+    ghost: "#735797",
+    dragon: "#6F35FC",
+    dark: "#705746",
+    steel: "#B7B7CE",
+    fairy: "#D685AD",
+}
 async function fetchData() {
     const BASE_URL = `https://pokeapi.co/api/v2/pokemon/${index}/`;
-    const response = await fetch(BASE_URL); //fetching info from URL
-    const data = await response.json(); //converting to json
+    const response = await fetch(BASE_URL);
+    const data = await response.json();
 
     const name = data.name;
     const image = data.image;
@@ -22,13 +42,23 @@ async function fetchData() {
     }
     const movesList = document.getElementById('movesList');
     movesList.innerHTML = '';
-
-    // Populate the move list
-    for (const moveName of moveNames) {
+    for (const moveName of moveNames.slice(0, 10)) {
         const listItem = document.createElement('li');
         listItem.textContent = moveName;
         movesList.appendChild(listItem);
     }
+    
+    const typesArray = data.types;
+    const typesDisplay = document.getElementById('type-pokemon');
+    typesDisplay.innerHTML = '';
+    typesArray.forEach((typeData) => {
+        const type = typeData.type.name;
+        const typeColor = types[type] || 'gray'; // Use types object
+        const typeElement = document.createElement('span');
+        typeElement.textContent = type;
+        typeElement.style.color = typeColor;
+        typesDisplay.appendChild(typeElement);
+    });
 
     
     document.getElementById("name-pokemon").innerHTML = `${name}`;
@@ -41,6 +71,7 @@ async function fetchData() {
     document.getElementById("special-defense").innerHTML = `${specialDefense}`;
     document.getElementById("speed").innerHTML = `${speed}`;
     document.getElementById('img-pokemon').src = data.sprites.front_default;
+    displayInfo();
 }
 
 fetchData();
