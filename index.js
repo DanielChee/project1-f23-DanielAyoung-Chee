@@ -20,6 +20,15 @@ async function fetchData() {
     for (const move of movesArray) {
         moveNames.push(move.move.name);
     }
+    const movesList = document.getElementById('movesList');
+    movesList.innerHTML = '';
+
+    // Populate the move list
+    for (const moveName of moveNames) {
+        const listItem = document.createElement('li');
+        listItem.textContent = moveName;
+        movesList.appendChild(listItem);
+    }
 
     
     document.getElementById("name-pokemon").innerHTML = `${name}`;
@@ -51,3 +60,27 @@ document.addEventListener('click', (event) => {
         fetchData();
     }
 });
+
+document.getElementById('infoButton').addEventListener('click', function() {
+    // Set the mode to "Info"
+    displayInfo();
+});
+
+document.getElementById('movesButton').addEventListener('click', function() {
+    // Set the mode to "Moves"
+    displayMoves();
+});
+
+function displayInfo() {
+
+    document.getElementById('stats').style.display = 'block';
+    document.getElementById('movesList').style.display = 'none';
+}
+
+function displayMoves() {
+
+    document.getElementById('movesList').style.display = 'block';
+    document.getElementById('stats').style.display = 'none';
+}
+
+
