@@ -27,7 +27,7 @@ async function fetchData() {
 
     const name = data.name.charAt(0).toUpperCase() + data.name.slice(1);;
     const image = data.image;
-    const height = data.height;
+    const height = String(data.height / 10) + " m";
     const weight = data.weight;
     const hp = data.stats[0].base_stat;
     const attack = data.stats[1].base_stat;
@@ -47,7 +47,7 @@ async function fetchData() {
         listItem.textContent = moveName.charAt(0).toUpperCase() + moveName.slice(1);
         movesList.appendChild(listItem);
     }
-    
+
     const typesArray = data.types;
     const typesDisplay = document.getElementById('type-pokemon');
     typesDisplay.innerHTML = '';
@@ -56,8 +56,13 @@ async function fetchData() {
         const typeColor = types[type] || 'gray';
         const typeElement = document.createElement('span');
         typeElement.textContent = type;
-        typeElement.style.color = typeColor;
+        typeElement.style.background = typeColor;
+        typeElement.style.marginRight = "5px";
+        typeElement.style.borderRadius = "4px";
+        typeElement.style.padding = "5px";
+        typeElement.style.fontSize = "11px";
         typesDisplay.appendChild(typeElement);
+        
     });
 
     
@@ -101,13 +106,13 @@ document.getElementById('movesButton').addEventListener('click', function() {
 });
 
 function displayInfo() {
-
+    document.getElementById('heading-stats').textContent = 'Information';
     document.getElementById('stats').style.display = 'block';
     document.getElementById('movesList').style.display = 'none';
 }
 
 function displayMoves() {
-
+    document.getElementById('heading-stats').textContent = 'Moves';
     document.getElementById('movesList').style.display = 'block';
     document.getElementById('stats').style.display = 'none';
 }
